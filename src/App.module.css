@@ -1,19 +1,55 @@
-.container {
-  background: var(--gray-400);
-}
-
-.app {
-  max-width: 70rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
 
 @media (max-width: 768px) {
   html {
     font-size: 87.5%;
   }
 }
+
+.textareaAndButton {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  margin-top: -2.25rem;
+  justify-content: center;
+}
+
+.textarea {
+  width: 40rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  height: 4rem;
+  padding: 1rem;
+
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: var(--gray-100);
+  background: var(--gray-500);
+  align-items: center;
+  padding-top: 1.3rem;
+  resize: none;
+  line-height: 1.4;
+}
+
+.buttonCreate {
+  padding: 0.30rem 1rem;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 8px;
+  border: none;
+
+  font-size: 1rem;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+}
+
+.buttonCreate:hover {
+  filter: brightness(0.9);
+}
+

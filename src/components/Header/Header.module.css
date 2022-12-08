@@ -2,11 +2,22 @@
     background-color: var(--gray-700);
     display: flex;
     justify-content: center;
-    height: 80px;
+    align-items: center;
+    height: 180px;
     padding: 1.25rem 0;
 }
 
 .header img {
     height: 2.5rem;
     margin-right: 1rem;
+}
+
+.textTo {
+    color: var(--blue);
+    font-weight: 800;
+}
+
+.textDo {
+    color: var(--purple-dark);
+    font-weight: 800;
 }
