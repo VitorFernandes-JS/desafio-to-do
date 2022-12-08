@@ -7,7 +7,7 @@ import { TaskBox } from "./components/Header/TaskBox/TaskBox";
 
 export function App() {
   return (
-    <div className={styles.teste}>
+    <div className={styles.container}>
       <Header />
 
       <div>
@@ -29,6 +29,9 @@ export function App() {
         </div>
 
         <div>
+          <TaskBox />
+          <TaskBox />
+          <TaskBox />
           <TaskBox />
         </div>
       </div>
