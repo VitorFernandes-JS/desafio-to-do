@@ -5,12 +5,16 @@
   }
 }
 
+.teste {
+  background: var(--gray-500);
+}
+
 .textareaAndButton {
   display: flex;
   flex-direction: row;
   gap: 1rem;
 
-  margin-top: -2.25rem;
+  margin-top: -2rem;
   justify-content: center;
 }
 
@@ -51,5 +55,40 @@
 
 .buttonCreate:hover {
   filter: brightness(0.9);
+}
+
+.informationsTask {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+
+  padding: 0.5rem 22rem;
+}
+
+.tasksCreated {
+  color: var(--blue);
+  font-size: 1rem;
+  font-weight: bold;  
+}
+
+.numberTasksCreated {
+  background: var(--gray-300);
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  color: var(--gray-100);
+}
+
+.numberCompletedTasks {
+  background: var(--gray-300);
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  color: var(--gray-100);
+}
+
+.completedTasks {
+  color: var(--purple);
+  font-size: 1rem;
+  font-weight: bold;  
 }
 
