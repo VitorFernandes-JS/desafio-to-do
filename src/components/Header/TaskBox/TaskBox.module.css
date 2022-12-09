@@ -8,5 +8,13 @@
     margin-bottom: 1rem;
     background: var(--gray-400);
     border-radius: 8px;
+}
 
+.buttonDeleteTask {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: filter 0.2s;
+    line-height: 0;
+    border-radius: 2px;
 }
