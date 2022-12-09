@@ -7,9 +7,10 @@ import { useState } from "react";
 interface TaskBoxProps {
   task: string;
   onDeleteTask: (deleteTask: string) => void;
+  isChecked: boolean;
 }
 
-export function TaskBox({task, onDeleteTask}: TaskBoxProps) {
+export function TaskBox({task, onDeleteTask, isChecked}: TaskBoxProps) {
   const [checked, setChecked] = useState(false);
 
   function handleDeleteTask() {
@@ -27,7 +28,7 @@ export function TaskBox({task, onDeleteTask}: TaskBoxProps) {
             setChecked(false);
           }
         }}
-        className={styles.checkboxRoot}
+        className={checked === !true ? styles.checkboxRoot : styles.checkboxRootIsChecked}
       >
         <Checkbox.Indicator className={styles.checkboxIndicator}>
           <CheckIcon />

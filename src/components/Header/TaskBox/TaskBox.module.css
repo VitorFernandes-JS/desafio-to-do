@@ -5,16 +5,29 @@
 
   padding: 2rem;
   margin: 1.5rem;
-  margin-inline: 18rem;
+  margin-inline: 19.5rem;
   margin-bottom: 1rem;
   background: var(--gray-400);
   border-radius: 8px;
 }
-
+ 
 .checkboxRoot {
   background-color: transparent;
   border-color: var(--blue);
   border: 0.15rem solid var(--blue);
+
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s;
+}
+
+.checkboxRootIsChecked {
+  background-color: var(--purple-dark);
+  border: 0.15rem solid var(--purple-dark);
 
   width: 1.2rem;
   height: 1.2rem;
@@ -30,8 +43,8 @@
 }
 
 .checkboxIndicator {
-  color: var(--blue);
-  margin-top: 0.15rem;
+  color: var(--gray-100);
+  margin-top: 0.20rem;
 }
 
 .textTask {
