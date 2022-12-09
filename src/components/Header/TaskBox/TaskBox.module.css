@@ -1,20 +1,66 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-    padding: 1rem;
-    margin: 1.5rem;
-    margin-bottom: 1rem;
-    background: var(--gray-400);
-    border-radius: 8px;
+  padding: 2rem;
+  margin: 1.5rem;
+  margin-inline: 15rem;
+  margin-bottom: 1rem;
+  background: var(--gray-400);
+  border-radius: 8px;
+}
+
+.checkboxRoot {
+  background-color: transparent;
+  border-color: var(--blue);
+  border: 0.15rem solid var(--blue);
+
+  width: 2rem;
+  height: 1.5rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s;
+}
+
+.checkboxRoot:hover {
+  background-color: var(--gray-300);
+}
+
+.checkboxIndicator {
+  color: var(--blue);
+  margin-top: 0.15rem;
+}
+
+.textTask {
+  font-size: 1rem;
+  text-align: left;
+  margin: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.textTaskLineThrough {
+  font-size: 1rem;
+  text-align: left;
+  margin: 1.5rem;
+  margin-top: 0.3rem;
+  text-decoration: line-through;
+  color: var(--gray-300);
 }
 
 .buttonDeleteTask {
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    transition: filter 0.2s;
-    line-height: 0;
-    border-radius: 2px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: filter 0.2s;
+  line-height: 0;
+  border-radius: 2px;
+  color: var(--gray-300);
+  cursor: pointer;
+}
+
+.buttonDeleteTask:hover {
+  color: var(--red);
 }

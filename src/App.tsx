@@ -13,6 +13,8 @@ export function App() {
       <div>
         <div className={styles.textareaAndButton}>
           <textarea
+            maxLength={100}
+            minLength={1}
             className={styles.textarea}
             placeholder="Adicione uma nova tarefa"
           ></textarea>

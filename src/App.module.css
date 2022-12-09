@@ -60,7 +60,7 @@
 .informationsTask {
   display: flex;
   flex-direction: row;
-  margin-top: 1rem;
+  margin-top: 2rem;
   justify-content: space-between;
 
   padding: 0.5rem 22rem;
