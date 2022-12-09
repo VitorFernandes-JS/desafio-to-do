@@ -10,8 +10,10 @@ interface TaskBoxProps {
   isChecked: boolean;
 }
 
-export function TaskBox({task, onDeleteTask, isChecked}: TaskBoxProps) {
+export function TaskBox({ task, onDeleteTask, isChecked }: TaskBoxProps) {
   const [checked, setChecked] = useState(false);
+
+  isChecked = checked;
 
   function handleDeleteTask() {
     onDeleteTask(task);
@@ -28,16 +30,26 @@ export function TaskBox({task, onDeleteTask, isChecked}: TaskBoxProps) {
             setChecked(false);
           }
         }}
-        className={checked === !true ? styles.checkboxRoot : styles.checkboxRootIsChecked}
+        className={
+          checked === !true ? styles.checkboxRoot : styles.checkboxRootIsChecked
+        }
       >
         <Checkbox.Indicator className={styles.checkboxIndicator}>
           <CheckIcon />
         </Checkbox.Indicator>
       </Checkbox.Root>
-      <span className={checked === !true ? styles.textTask : styles.textTaskLineThrough}>
+      <span
+        className={
+          checked === !true ? styles.textTask : styles.textTaskLineThrough
+        }
+      >
         {task}
       </span>
-      <button onClick={handleDeleteTask} className={styles.buttonDeleteTask} title="Deletar task">
+      <button
+        onClick={handleDeleteTask}
+        className={styles.buttonDeleteTask}
+        title="Deletar task"
+      >
         <Trash />
       </button>
     </div>

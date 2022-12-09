@@ -1,5 +1,5 @@
 import { Header } from "./components/Header/Header";
-import { PlusCircle } from "phosphor-react";
+import { ClipboardText, PlusCircle } from "phosphor-react";
 
 import styles from "./App.module.css";
 import "./global.css";
@@ -12,7 +12,7 @@ export function App() {
 
   let variableNumberTasksCreated = task.length;
   let numberCompletedTasks = 0;
-  
+
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault(); // previne o comportamento padrão do form, que é recarregar a página
     if (newTask.trim() === "") {
@@ -21,7 +21,7 @@ export function App() {
     setTask([...task, newTask]); // adiciona um novo comentário
     console.log(task);
     setNewText(""); // limpa o input
-  };
+  }
 
   function deleteTask(taskToDelete: string) {
     setTask(task.filter((task) => task !== taskToDelete));
@@ -64,11 +64,17 @@ export function App() {
             </span>
           </div>
         </form>
-
+        {task.length === 0 && (
+          <div className={styles.noTasks}>
+            <ClipboardText size={32} className={styles.iconList} />
+            <strong>Você ainda não tem tarefas cadastradas</strong>
+            <span>Crie tarefas e organize seus itens a fazer</span>
+          </div>
+        )}
         <div>
           {task.map((content) => {
             return (
-              <TaskBox key={content} task={content} onDeleteTask={deleteTask} isChecked={false} />
+              <TaskBox key={content} task={content} onDeleteTask={deleteTask} isChecked={isChecked === true ? console.log("teste1") : console.log("teste2")}/>
             );
           })}
         </div>
