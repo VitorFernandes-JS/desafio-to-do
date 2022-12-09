@@ -4,10 +4,17 @@ import * as Checkbox from "@radix-ui/react-checkbox";
 import { CheckIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 
-export function TaskBox() {
+interface TaskBoxProps {
+  task: string;
+  onDeleteTask: (deleteTask: string) => void;
+}
+
+export function TaskBox({task, onDeleteTask}: TaskBoxProps) {
   const [checked, setChecked] = useState(false);
 
-  console.log(checked);
+  function handleDeleteTask() {
+    onDeleteTask(task);
+  }
 
   return (
     <div className={styles.container}>
@@ -27,10 +34,9 @@ export function TaskBox() {
         </Checkbox.Indicator>
       </Checkbox.Root>
       <span className={checked === !true ? styles.textTask : styles.textTaskLineThrough}>
-        Arrumar o quarto Arrumar o quarto Arrumar o quarto Arrumar o quarto
-        Arrumar o quarto Arrumar o quarto Arrumar o quarto Arrumar o quarto
+        {task}
       </span>
-      <button className={styles.buttonDeleteTask} title="Deletar task">
+      <button onClick={handleDeleteTask} className={styles.buttonDeleteTask} title="Deletar task">
         <Trash />
       </button>
     </div>
