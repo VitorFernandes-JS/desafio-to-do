@@ -11,7 +11,7 @@ export function App() {
   const [newTask, setNewText] = useState("");
 
   let variableNumberTasksCreated = task.length;
-  let numberCompletedTasks = 0;
+  // let numberCompletedTasks = 0;
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault(); // previne o comportamento padrão do form, que é recarregar a página
@@ -74,7 +74,7 @@ export function App() {
         <div>
           {task.map((content) => {
             return (
-              <TaskBox key={content} task={content} onDeleteTask={deleteTask} isChecked={isChecked === true ? console.log("teste1") : console.log("teste2")}/>
+              <TaskBox key={content} task={content} onDeleteTask={deleteTask} />
             );
           })}
         </div>

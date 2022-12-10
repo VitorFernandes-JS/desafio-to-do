@@ -7,13 +7,10 @@ import { useState } from "react";
 interface TaskBoxProps {
   task: string;
   onDeleteTask: (deleteTask: string) => void;
-  isChecked: boolean;
 }
 
-export function TaskBox({ task, onDeleteTask, isChecked }: TaskBoxProps) {
+export function TaskBox({ task, onDeleteTask }: TaskBoxProps) {
   const [checked, setChecked] = useState(false);
-
-  isChecked = checked;
 
   function handleDeleteTask() {
     onDeleteTask(task);
