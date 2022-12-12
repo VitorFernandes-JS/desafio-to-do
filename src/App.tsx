@@ -9,9 +9,20 @@ import { useState, FormEvent } from "react";
 export function App() {
   const [task, setTask] = useState([]);
   const [newTask, setNewText] = useState("");
+  const [checked, setChecked] = useState("");
 
   let variableNumberTasksCreated = task.length;
-  // let numberCompletedTasks = 0;
+  let numberCompletedTasks = 0;
+
+  const isChecked = (checked: any) => {
+    setChecked(checked)
+  };
+
+  if (checked == true) {
+    numberCompletedTasks = numberCompletedTasks + 1;
+  } else {
+    numberCompletedTasks = 0;
+  }
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault(); // previne o comportamento padrão do form, que é recarregar a página
@@ -19,7 +30,6 @@ export function App() {
       return;
     }
     setTask([...task, newTask]); // adiciona um novo comentário
-    console.log(task);
     setNewText(""); // limpa o input
   }
 
@@ -30,7 +40,6 @@ export function App() {
   return (
     <div className={styles.container}>
       <Header />
-
       <div>
         <form onSubmit={handleCreateNewTask}>
           <div className={styles.textareaAndButton}>
@@ -59,7 +68,7 @@ export function App() {
             <span className={styles.completedTasks}>
               Concluídas{" "}
               <span className={styles.numberCompletedTasks}>
-                0 de {variableNumberTasksCreated}
+                {numberCompletedTasks} de {variableNumberTasksCreated}
               </span>
             </span>
           </div>
@@ -74,7 +83,7 @@ export function App() {
         <div>
           {task.map((content) => {
             return (
-              <TaskBox key={content} task={content} onDeleteTask={deleteTask} />
+              <TaskBox key={content} task={content} onDeleteTask={deleteTask} isChecked={isChecked} />
             );
           })}
         </div>

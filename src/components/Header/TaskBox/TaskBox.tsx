@@ -7,10 +7,15 @@ import { useState } from "react";
 interface TaskBoxProps {
   task: string;
   onDeleteTask: (deleteTask: string) => void;
+  isChecked: (data: boolean) => void;
 }
 
-export function TaskBox({ task, onDeleteTask }: TaskBoxProps) {
+export function TaskBox({ task, onDeleteTask, isChecked }: TaskBoxProps) {
   const [checked, setChecked] = useState(false);
+
+  const handleChecked = (checked: boolean) => {
+    isChecked(checked);
+  };
 
   function handleDeleteTask() {
     onDeleteTask(task);
@@ -23,6 +28,7 @@ export function TaskBox({ task, onDeleteTask }: TaskBoxProps) {
         onCheckedChange={(checked) => {
           if (checked === true) {
             setChecked(true);
+            handleChecked(checked);
           } else {
             setChecked(false);
           }
