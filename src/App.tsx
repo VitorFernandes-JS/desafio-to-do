@@ -7,7 +7,7 @@ import { TaskBox } from "./components/Header/TaskBox/TaskBox";
 import { useState, FormEvent } from "react";
 
 export function App() {
-  const [task, setTask] = useState([]);
+  const [task, setTask] = useState([""]);
   const [newTask, setNewText] = useState("");
   const [checked, setChecked] = useState("");
 
@@ -18,11 +18,11 @@ export function App() {
     setChecked(checked)
   };
 
-  if (checked == true) {
-    numberCompletedTasks = numberCompletedTasks + 1;
-  } else {
-    numberCompletedTasks = 0;
-  }
+  // if (checked == true) {
+  //   numberCompletedTasks = numberCompletedTasks + 1;
+  // } else {
+  //   numberCompletedTasks = 0;
+  // }
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault(); // previne o comportamento padrão do form, que é recarregar a página
